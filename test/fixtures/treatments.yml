@@ -1,0 +1,15 @@
+one:
+  appointment: one
+  name: Vaccine
+  medication: Rabies
+  dosage: 1 dose
+  notes: No problems
+  administered_at: 2026-05-01 10:30:00
+
+two:
+  appointment: two
+  name: Cleaning
+  medication: None
+  dosage: N/A
+  notes: Routine treatment
+  administered_at: 2026-05-02 11:30:00

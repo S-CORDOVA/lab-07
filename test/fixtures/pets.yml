@@ -1,0 +1,15 @@
+one:
+  name: Toby
+  species: dog
+  breed: Poodle
+  date_of_birth: 2020-01-01
+  weight: 8.5
+  owner: one
+
+two:
+  name: Luna
+  species: cat
+  breed: Siamese
+  date_of_birth: 2021-02-02
+  weight: 4.2
+  owner: two

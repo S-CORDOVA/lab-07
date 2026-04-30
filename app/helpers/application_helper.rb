@@ -8,15 +8,6 @@ module ApplicationHelper
   end
 
   def appointment_status_text(status)
-    case status
-    when 0
-      "Scheduled"
-    when 1
-      "In Progress"
-    when 2
-      "Completed"
-    when 3
-      "Cancelled"
-    end
+    status.humanize
   end
 end

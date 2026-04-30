@@ -1,5 +1,7 @@
 <h1>Pets</h1>
 
+<%= link_to "New Pet", new_pet_path, class: "btn btn-primary mb-3" %>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -8,16 +10,22 @@
       <th>Breed</th>
       <th>Owner name</th>
       <th>Date of birth</th>
+      <th>Actions</th>
     </tr>
   </thead>
+
   <tbody>
-    <% Pet.by_species("dog").each do |pet| %>
+    <% @pets.each do |pet| %>
       <tr>
         <td><%= link_to pet.name, pet_path(pet) %></td>
         <td><%= pet.species %></td>
         <td><%= pet.breed %></td>
         <td><%= link_to "#{pet.owner.first_name} #{pet.owner.last_name}", owner_path(pet.owner) %></td>
         <td><%= formatted_date(pet.date_of_birth) %></td>
+        <td>
+          <%= link_to "Edit", edit_pet_path(pet), class: "btn btn-sm btn-secondary" %>
+          <%= button_to "Delete", pet_path(pet), method: :delete, form: { data: { turbo_confirm: "Are you sure?" } }, class: "btn btn-sm btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>

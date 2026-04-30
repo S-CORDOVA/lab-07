@@ -1,0 +1,13 @@
+one:
+  first_name: Paula
+  last_name: Medina
+  email: paula@example.com
+  phone: "333333333"
+  specialization: General Medicine
+
+two:
+  first_name: Diego
+  last_name: Castro
+  email: diego@example.com
+  phone: "444444444"
+  specialization: Vaccination

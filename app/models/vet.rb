@@ -11,4 +11,8 @@ class Vet < ApplicationRecord
   def normalize_email
     self.email = email.strip.downcase if email
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

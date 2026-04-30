@@ -1,0 +1,13 @@
+one:
+  pet: one
+  vet: one
+  date: 2026-05-01 10:00:00
+  reason: Checkup
+  status: scheduled
+
+two:
+  pet: two
+  vet: two
+  date: 2026-05-02 11:00:00
+  reason: Vaccine
+  status: completed

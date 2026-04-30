@@ -1,0 +1,13 @@
+one:
+  first_name: Ana
+  last_name: Soto
+  email: ana@example.com
+  phone: "111111111"
+  address: Providencia
+
+two:
+  first_name: Luis
+  last_name: Rojas
+  email: luis@example.com
+  phone: "222222222"
+  address: Santiago
