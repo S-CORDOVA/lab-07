@@ -1,5 +1,13 @@
 <h1><%= @pet.name %></h1>
 
+<% if @pet.photo.attached? %>
+  <%= image_tag @pet.photo, width: 300, class: "img-fluid rounded mb-3" %>
+<% else %>
+  <div class="bg-light border rounded p-4 mb-3 text-muted text-center" style="max-width: 300px;">
+    No photo available
+  </div>
+<% end %>
+
 <p>Species: <%= @pet.species %></p>
 <p>Breed: <%= @pet.breed %></p>
 <p>Date of birth: <%= formatted_date(@pet.date_of_birth) %></p>

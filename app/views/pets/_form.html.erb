@@ -31,5 +31,15 @@
     <%= f.collection_select :owner_id, Owner.all, :id, :first_name, {}, class: "form-select" %>
   </div>
 
+  <div class="mb-3">
+    <% if pet.persisted? && pet.photo.attached? %>
+      <p class="mb-1"><strong>Current photo</strong></p>
+      <%= image_tag pet.photo, width: 100, class: "rounded mb-2" %>
+    <% end %>
+
+    <%= f.label :photo, "Photo", class: "form-label" %>
+    <%= f.file_field :photo, class: "form-control" %>
+  </div>
+
   <%= f.submit class: "btn btn-primary" %>
 <% end %>

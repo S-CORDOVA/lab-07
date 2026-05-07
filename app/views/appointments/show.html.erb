@@ -19,22 +19,31 @@
 <%= link_to "New Treatment", new_appointment_treatment_path(@appointment), class: "btn btn-primary mb-3" %>
 
 <ul>
-  <% @appointment.treatments.each do |treatment| %>
-    <li class="mb-2">
+  <% @treatments.each do |treatment| %>
+    <li class="mb-3">
       <strong><%= treatment.name %></strong> -
       <%= treatment.medication %> -
       <%= treatment.dosage %> -
       <%= formatted_datetime(treatment.administered_at) %>
 
-      <%= link_to "Edit",
-          edit_appointment_treatment_path(@appointment, treatment),
-          class: "btn btn-sm btn-secondary" %>
+      <div class="mt-2">
+        <strong>Clinical notes:</strong>
+        <div class="border rounded p-3 mt-1">
+          <%= treatment.clinical_notes %>
+        </div>
+      </div>
 
-      <%= button_to "Delete",
-          appointment_treatment_path(@appointment, treatment),
-          method: :delete,
-          data: { turbo_confirm: "Are you sure?" },
-          class: "btn btn-sm btn-danger" %>
+      <div class="d-flex gap-2 mt-2">
+        <%= link_to "Edit",
+            edit_appointment_treatment_path(@appointment, treatment),
+            class: "btn btn-sm btn-secondary" %>
+
+        <%= button_to "Delete",
+            appointment_treatment_path(@appointment, treatment),
+            method: :delete,
+            form: { data: { turbo_confirm: "Are you sure?" } },
+            class: "btn btn-sm btn-danger" %>
+      </div>
     </li>
   <% end %>
 </ul>
