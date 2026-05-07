@@ -197,3 +197,9 @@ Write a short `README.md` at the root of the project that tells the TA:
 - The appointment show page eager-loads `clinical_notes` and avoids an N+1 on rich text bodies.
 - Seeds attach photos to several pets and rich-text notes to several treatments, and run cleanly on a fresh database.
 - README documents how to run the app, lists libvips as a system dependency, and notes the Trix sanitization check.
+
+
+## Lab 7 verification
+
+I checked the appointment show page with more than one treatment. The log shows that clinical notes are loaded together with record_id IN, so there is no n+1 query problem.
+I also tested action text sanitization by adding <script>alert(1)</script> in a treatments clinical notes. No alert appeared, so the script did not run.
