@@ -201,5 +201,4 @@ Write a short `README.md` at the root of the project that tells the TA:
 
 ## Lab 7 verification
 
-I checked the appointment show page with more than one treatment. The log shows that clinical notes are loaded together with record_id IN, so there is no n+1 query problem.
-I also tested action text sanitization by adding <script>alert(1)</script> in a treatments clinical notes. No alert appeared, so the script did not run.
+I tested action text sanitization by adding <script>alert(1)</script> in a treatments clinical notes. No alert appeared, so the script did not run.
